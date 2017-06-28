@@ -1,13 +1,13 @@
-function countLetters(sentence){
+function positionLetters(sentence){
   var letterTotals = {};
   for(var i = 0; i < sentence.length; i++){
     var letter = [];
     letter[i] = sentence.charAt(i).toLowerCase();
     if (letter[i] === " " || letter[i] === "." || letter[i] === ","){} //Do nothing if a space
-    else if(!letterTotals[letter[i]]){ //if letter does exist, add one to count
+    else if(!letterTotals[letter[i]]){ //if letter does not exist, add it with first occuring position
       letterTotals[letter[i]] = i.toString();
     }
-    else { // else if if does exist, make count 1
+    else { // else if if does exist, add the next position to the list with comma
       letterTotals[letter[i]] += ", " + i.toString();
     }
   }
@@ -17,10 +17,4 @@ function countLetters(sentence){
 //CHANGE TEXT HERE
 countMe = "Lightouse in the house.";
 
-console.log(countLetters(countMe));
-
-//run through every letter in the string
-//identify the letter that is in the string
-//if the letter does not exist in the array yet, add it
-//else if the letter does exist, add to the count of that specific letter
-//
+console.log(positionLetters(countMe));
