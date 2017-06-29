@@ -16,4 +16,3 @@ function positionLetters(sentence){
 //CHANGE TEXT HERE
 countMe = "Lightouse in the house.";
 positionLetters(countMe);
-
